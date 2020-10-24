@@ -2,11 +2,15 @@
 const http = require('http')
 const https = require('https')
 const express = require('express')
+const ejs = require('ejs')
 const fs = require('fs')
 const path = require('path')
 
 // Init express
 const app = express()
+
+// Init ejs
+app.set('view engine', 'ejs')
 
 // Track servers
 var servers = []
@@ -21,6 +25,10 @@ const private = path.join(dir, 'private')
 const settings = JSON.parse(fs.readFileSync(path.join(private, 'settings.json')))
 // ^  set var   |parse json|read file      |create filepath    |read from ^
 
+// Preload site serving settings
+const siteInfo = JSON.parse(fs.readFileSync(path.join(private, 'siteInfo.json')))
+const redirects = JSON.parse(fs.readFileSync(path.join(private, 'redirects.json')))
+
 // Configure basic middleman
 app.use((req, res, next) => {
     res.locals.user = req.user
@@ -30,9 +38,43 @@ app.use((req, res, next) => {
 // Serve static for items in public
 app.use(express.static(public))
 
-// Main website (first and only page, aside from 404)
-app.get('/', (req, res) => {
-    res.sendFile(path.join(views, 'index.html'))
+// All major content
+app.get('*', (req, res) => {
+    // Test if page ends with /, redirect to ending without /
+    let match = req.originalUrl.match(/(.*)\/$/m)
+    if (!match || req.originalUrl.match(/^\/$/m)) {
+        // Test if page is registered in siteInfo
+        if (siteInfo.pages[req.originalUrl]) {
+            res.render(path.join(viewsDir, 'index.ejs'), {
+                siteInfo,
+                title: siteInfo.site.title,
+                nav: siteInfo.site.navbar,
+                page: siteInfo.pages[req.originalUrl],
+                def: siteInfo.pages["*"],
+                content: siteInfo.pages[req.originalUrl].content || siteInfo.pages["*"].content,
+                comp: siteInfo.components,
+                icons,
+            })
+        } else if (redirects[req.originalUrl]) {
+            res.redirect(siteInfo.redirect[req.originalUrl])
+        } else {
+            // Send 404 page
+            res.render(path.join(viewsDir, 'index.ejs'), {
+                siteInfo,
+                title: siteInfo.site.title,
+                nav: siteInfo.site.navbar,
+                page: siteInfo.pages['/404'],
+                def: siteInfo.pages["*"],
+                content: siteInfo.pages['/404'].content || siteInfo.pages["*"].content,
+                comp: siteInfo.components,
+                required: siteInfo.pages['/404'].requrire || siteInfo.pages["*"].require,
+                icons,
+            })
+        }
+    } else {
+        // If page ends with '/'
+        res.redirect(match[1])
+    }
 })
 
 // 404 page

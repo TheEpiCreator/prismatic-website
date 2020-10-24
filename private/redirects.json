@@ -1,0 +1,5 @@
+{
+    "/discord/invite/shop-bot": "https://discord.com/oauth2/authorize?client_id=757103239668695110&permissions=29435968&scope=bot",
+    "/discord/invite/bitbot": "https://discord.com/api/oauth2/authorize?client_id=738140410261536778&permissions=8&scope=bot",
+    "/discord/invite/stonks-bot": "https://discord.com/api/oauth2/authorize?client_id=758083144749678604&permissions=8&scope=bot"
+}
