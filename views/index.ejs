@@ -1,54 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Prismatic Client</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo-container">
-        <img src="./img/logo.svg" alt="logo" />
-        <h4 class="logo">Prismatic</h4>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a class="nav-link" href="#">About Us</a></li>
-          <li><a class="nav-link" href="#">Our Discord Bots</a></li>
-          <li><a class="nav-link" href="#">Contact Us</a></li>
-        </ul>
-      </nav>
-    </header>
+<html class="" lang="<%= page.lang || def.lang %> ">
 
-    <main>
-      <section class="presentation">
-        <div class="introduction">
-          <div class="intro-text">
-            <h1>The Prismatic Client</h1>
-            <p>A brand new client to help your pvp skills improve</p>
-          </div>
-          <div class="cta">
-            <button class="cta-select">Download</button>
-          </div>
-        </div>
-        <div class="cover">
-          <img src="./img/" alt="matebook" />
-        </div>
-      </section>
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="<%= page.bots ? page.bots.join(", ") || def.bots.join(", ") : def.bots.join(", ") %>" />
+  <meta name="description" content="<%= page.description || def.description %>" />
+  <meta name="keywords"
+    content="<%= page.keywords ? page.keywords.join(", ") || def.keywords.join(", ") : def.keywords.join(", ") %>" />
+  <!-- Title --> <%# Switch title to default if undefined %>
+  <title><%= page.title === "" || !page.title ? title.default : `${title.pre}${page.title}${title.post}` %> </title>
+  <!-- Favicon -->
+  <link defer id="icon" rel="shortcut icon" type="image" href="/icon.ico">
+  <!-- Main Style -->
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+  <!-- Navbar Style -->
+  <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
+  <!-- Footer -->
+  <link defer rel="stylesheet" type="text/css" href="/styles/footer.css">
+  <!-- Generated -->
+  <% for(let item of page.css || def.css) { %>
+  <link defer rel="stylesheet" type="text/css" href="/styles/components/<%= item %>.css">
+  <% } %>
+  <% for(let item of page.js || def.js) { %>
+  <script defer src="/scripts/components/<%= item %>.js"></script>
+  <% } %>
+  <!-- Theme Script -->
+  <script defer src="/scripts/theme.js"></script>
+  <!-- Sound Manager Script -->
+</head>
 
-      <div class="laptop-select">
-        <img src="./img/" alt="" />
-        <img src="./img/" alt="" />
-        <img src="./img/" alt="" />
-        <img src="./img/" alt="" />
-        <img src="./img/" alt="" />
-      </div>
-    </main>
-  </body>
+<body>
+  <!-- Audio -->
+  <% for(let item of siteInfo.site.sounds) { %>
+  <audio id="<%= item %>">
+    <source src="/sounds/<%= item %>.mp3" />
+    <source src="/sounds/<%= item %>.ogg" />
+  </audio>
+  <% } %>
+
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="<%= nav.title.link %>" class="nav-link">
+          <span class="link-text logo-text"><%= nav.title.name %></span>
+          <%- icons[nav.title.icon] %>
+        </a>
+      </li>
+
+      <%# Loop through each item in site info, add a corresponding list item %>
+
+      <% for(let item of nav.items) { %>
+      <li class="nav-item">
+        <a href="<%= item.link %> " class="nav-link">
+          <%- icons[item.icon] %>
+          <span class="link-text"><%= item.name %></span>
+        </a>
+      </li>
+      <% } %>
+
+      <li class="nav-item" id="themeButton">
+        <a href="#" class="nav-link">
+          <%- icons['light.svg'] %>
+          <%- icons['dark-solar.svg'] %>
+          <%- icons['dark.svg'] %>
+          <span class="link-text">Change Theme</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Acutal useful content -->
+    <div id="content">
+      <%# Loop through content and populate %>
+      <% for(let item of content) { %>
+      <% switch(item.type) { case "test": %>
+      <!-- If you're seeing this, the webpage population is working properly. -->
+      <% break %>
+      <% case "component": %>
+      <%- include(`components/${item.content}`, item.required || {}) %>
+      <% break %>
+      <% default: %>
+      <%- `<${item.type}>` %>
+      <%- item.content %>
+      <%- `</${item.type}>` %>
+      <% } %>
+      <% } %>
+    </div>
+
+    <!-- Footer -->
+    <%- include('components/footer') %>
+  </main>
+</body>
+
 </html>

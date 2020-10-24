@@ -1,0 +1,7 @@
+footer {
+    padding: 2rem;
+    width: calc(100% - 4rem);
+    margin-top: 2rem;
+    bottom: var(--navbar-height);
+    background-color: var(--background-mod);
+}
