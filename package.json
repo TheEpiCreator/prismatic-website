@@ -1,0 +1,32 @@
+{
+  "name": "website-for-mc",
+  "version": "1.0.0",
+  "description": "Main entry website for Prismatic Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bob01234/website-for-mc.git"
+  },
+  "keywords": [
+    "Prismatic",
+    "Minecraft",
+    "Client",
+    "website"
+  ],
+  "author": "EPCR",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Bob01234/website-for-mc/issues"
+  },
+  "homepage": "https://github.com/Bob01234/website-for-mc#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
