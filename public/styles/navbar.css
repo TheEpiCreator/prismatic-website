@@ -67,6 +67,11 @@
   /* Disable wrapping */
   white-space: nowrap;
   margin-left: 1rem;
+  color: var(--main-invert)
+}
+
+.logo-text {
+  color: var(--main-invert)
 }
 
 .nav-link svg {
@@ -96,11 +101,11 @@
 }
 
 .nav-link:hover .link-text {
-  color: var(--contrast-mod);
+  color: var(--main-invert-mod);
 }
 
 .nav-link:hover .logo-text {
-  color: var(--contrast);
+  color: var(--main-invert-mod);
 }
 
 .logo {
