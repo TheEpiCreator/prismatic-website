@@ -88,11 +88,11 @@
 }
 
 .nav-link:hover .fa-primary {
-  color: var(--contrast);
+  color: var(--contrast-secondary);
 }
 
 .nav-link:hover .fa-secondary {
-  color: var(--contrast-mod);
+  color: var(--contrast-secondary-mod);
 }
 
 .nav-link:hover .link-text {

@@ -74,8 +74,10 @@ html {
   --main-mod: #ebedef;
   --background: #f2f3f5;
   --background-mod: #e8eaed;
-  --contrast: #75dddd;
-  --contrast-mod: #84c7d0;
+  --contrast: #7a9fe4;
+  --contrast-mod: #75dddd;
+  --contrast-secondary: #bfa4ff;
+  --contrast-secondary-mod: #ffb7f9;
   --main-invert: #2e3338;
   --main-invert-mod: #2e3338;
   --main-grad: var(--main);

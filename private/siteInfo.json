@@ -14,9 +14,9 @@
             },
             "items": [
                 {
-                    "name": "Discord Bots",
-                    "icon": "discord.svg",
-                    "link": "/discord"
+                    "name": "Download",
+                    "icon": "download.svg",
+                    "link": "/download"
                 },
                 {
                     "name": "Code Libraries",
