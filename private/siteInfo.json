@@ -19,9 +19,9 @@
                     "link": "/download"
                 },
                 {
-                    "name": "Code Libraries",
-                    "icon": "code.svg",
-                    "link": "/libraries"
+                    "name": "Documentation",
+                    "icon": "document.svg",
+                    "link": "/documentation"
                 },
                 {
                     "name": "Settings",
@@ -40,12 +40,12 @@
             "lang": "en-us",
             "description": "Professional web development, Discord bots, and custom libraries are all available at epcr.dev",
             "keywords": [
-                "epcr",
-                "development",
-                "coding",
-                "website",
-                "web development",
-                "discord bots"
+                "Prismatic",
+                "client",
+                "Minecraft",
+                "pvp",
+                "survival",
+                "anticheat"
             ],
             "bots": [],
             "content": [
@@ -66,6 +66,25 @@
                 }
             ]
         },
+        "/download": {
+            "title": "Download",
+            "description": "Download the Prismatic client to recieve exclusive features such as AI cheat detection, FPS boost, a command selection wheel, and more.",
+            "keywords": [
+                "Download"
+            ],
+            "bots": [
+                "nofollow"
+            ],
+            "content": [
+                {
+                    "type": "component",
+                    "content": "download"
+                }
+            ],
+            "css": [
+                "download"
+            ]
+        },
         "/404": {
             "title": "404",
             "description": "The page you are looking for was not found.",
@@ -80,103 +99,6 @@
                     "type": "component",
                     "content": "404"
                 }
-            ]
-        },
-        "/discord": {
-            "title": "Discord Bots",
-            "description": "A list of all discord bots I have ever created",
-            "keywords": [
-                "discord",
-                "discord bot",
-                "discord bots",
-                "bot list"
-            ],
-            "content": [
-                {
-                    "type": "component",
-                    "content": "bot-cards",
-                    "required": {
-                        "cards": [
-                            {
-                                "name": "BitBot",
-                                "id": "7403",
-                                "icon": "bitbot.png",
-                                "link": "/discord/invite/bitbot",
-                                "desc": "A bot to test the capabilities of discord bots. Not a serious project.",
-                                "production": true
-                            },
-                            {
-                                "name": "Shop Bot",
-                                "id": "0593",
-                                "icon": "shop.jpg",
-                                "link": "/discord/invite/shop-bot",
-                                "desc": "A bot built to help create video game item shops",
-                                "production": false
-                            },
-                            {
-                                "name": "Stonks Bot",
-                                "id": "8063",
-                                "icon": "stonks.png",
-                                "link": "/discord/invite/stonks-bot",
-                                "desc": "Trade live stocks with fake currency",
-                                "production": false
-                            }
-                        ]
-                    }
-                }
-            ],
-            "css": [
-                "cards"
-            ]
-        },
-        "/settings": {
-            "title": "Settings",
-            "description": "Modify any settings for this webpage",
-            "keywords": [
-                "settings"
-            ],
-            "bots": [
-                "noindex"
-            ],
-            "content": [
-                {
-                    "type": "component",
-                    "content": "settings",
-                    "required": {
-                        "settings": [
-                            {
-                                "name": "Theme",
-                                "type": "switch",
-                                "value": "theme"
-                            }
-                        ]
-                    }
-                }
-            ],
-            "js": [
-                "react-settings"
-            ]
-        },
-        "/r": {
-            "title": "Add a URL to redirect",
-            "description": "Add a url to redirect to and a corresponding name.",
-            "keywords": [
-                "url shortener",
-                "shortening",
-                "custom url"
-            ],
-            "bots": [
-                "noindex",
-                "nofollow"
-            ],
-            "content": [
-                {
-                    "type": "component",
-                    "content": "urlform"
-                }
-            ],
-            "js":[
-                "submit-form"
             ]
         }
     }
