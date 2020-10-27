@@ -37,28 +37,16 @@ p {
 /* Default Theme */
 
 html {
-  --main: #36393f;
-  --main-mod: #40444b;
-  --background: #2f3136;
-  --background-mod: #1d1f22;
-  --contrast: #65afff;
-  --contrast-mod: #5899e2;
-  --main-invert: #dcddde;
-  --main-invert-mod: #dcddde;
-  --main-grad: var(--main);
-  --background-mod-grad: var(--background-mod);
-  --contrast-grad: var(--contrast);
-}
-
-.theme-dark {
-  --main: #36393f;
-  --main-mod: #40444b;
-  --background: #2f3136;
-  --background-mod: #1d1f22;
-  --contrast: #65afff;
-  --contrast-mod: #5899e2;
-  --main-invert: #dcddde;
-  --main-invert-mod: #dcddde;
+  --main: #fff;
+  --main-mod: #ebedef;
+  --background: #f2f3f5;
+  --background-mod: #e8eaed;
+  --contrast: #7a9fe4;
+  --contrast-mod: #75dddd;
+  --contrast-secondary: #bfa4ff;
+  --contrast-secondary-mod: #ffb7f9;
+  --main-invert: #2e3338;
+  --main-invert-mod: #323f4d;
   --main-grad: var(--main);
   --background-mod-grad: var(--background-mod);
   --contrast-grad: var(--contrast);

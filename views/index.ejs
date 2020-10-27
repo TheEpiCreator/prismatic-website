@@ -24,7 +24,7 @@
   <link defer rel="stylesheet" type="text/css" href="/styles/components/<%= item %>.css">
   <% } %>
   <% for(let item of page.js || def.js) { %>
-  <script defer src="/scripts/components/<%= item %>.js"></script>
+  <script defer src="/scripts/<%= item %>.js"></script>
   <% } %>
   <!-- Theme Script -->
   <script defer src="/scripts/theme.js"></script>
@@ -36,7 +36,6 @@
   <% for(let item of siteInfo.site.sounds) { %>
   <audio id="<%= item %>">
     <source src="/sounds/<%= item %>.mp3" />
-    <source src="/sounds/<%= item %>.ogg" />
   </audio>
   <% } %>
 

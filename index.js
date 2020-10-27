@@ -54,6 +54,11 @@ app.use((req, res, next) => {
 // Serve static for items in public
 app.use(express.static(public))
 
+app.get('/download/get', function (req, res) {
+    const file = `${__dirname}/private/client/test.zip`
+    res.download(file) // Set disposition and send it.
+})
+
 // All major content
 app.get('*', (req, res) => {
     // Test if page ends with /, redirect to ending without /
@@ -91,11 +96,6 @@ app.get('*', (req, res) => {
         // If page ends with '/'
         res.redirect(match[1])
     }
-})
-
-// 404 page
-app.get('*', (req, res) => {
-    res.status(404).sendFile(path.join(views, '404.html'))
 })
 
 // Init servers

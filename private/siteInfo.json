@@ -31,7 +31,9 @@
             ]
         },
         "sounds": [
-            "nav-hover"
+            "nav-hover",
+            "button-down",
+            "button-up"
         ]
     },
     "pages": {
@@ -83,6 +85,9 @@
             ],
             "css": [
                 "download"
+            ],
+            "js": [
+                "button"
             ]
         },
         "/404": {
