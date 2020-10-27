@@ -1,4 +1,27 @@
-#download{
+#download {
+    display: block;
+    position: relative;
+    top: -6vmin;
+    text-align: center;
+    padding: 10rem;
+    margin: auto;
+    margin-top: 20vh;
+    width: 70%;
     text-decoration: none;
-    color: var(--discord-green-1)
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10vw;
+    border-radius: 8vmin;
+    color: #9a81f5;
+    background-color: #c68cec;
+    background-image: linear-gradient(to left, var(--contrast-secondary), var(--contrast-secondary-mod));
+    box-shadow: 0vmin 12vmin 0 #bb7ee4;
+    transition: all 400ms 40ms cubic-bezier(1,-0.05,0,1.41), color 300ms 40ms cubic-bezier(1, 0, .27, 1.44);
+}
+
+#download:active {
+    top: 6vmin;
+    color: #fff;
+    box-shadow: 0 0 0 #bb7ee4;
+    transition: all 85ms 0ms cubic-bezier(.19, .02, 0, 1), color 0ms 0ms cubic-bezier(1, 0, .27, 1.44);
 }
