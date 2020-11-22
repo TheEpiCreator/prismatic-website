@@ -65,7 +65,17 @@
                 {
                     "type": "component",
                     "content": "home"
+                },
+                {
+                    "type": "component",
+                    "content": "spacer"
                 }
+            ],
+            "css": [
+                "home"
+            ],
+            "js": [
+                "videoscroll"
             ]
         },
         "/download": {

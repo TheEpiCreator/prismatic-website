@@ -21,7 +21,7 @@
 }
 
 .navbar {
-  z-index: 10;
+  z-index: 8;
   position: fixed;
   background-color: var(--main);
   background-image: linear-gradient(to right, var(--main), var(--main-grad));

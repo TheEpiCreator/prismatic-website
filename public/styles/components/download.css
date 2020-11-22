@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 #download {
+    z-index: 6;
     display: block;
     position: relative;
     top: -5vmin;

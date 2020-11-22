@@ -139,19 +139,6 @@ main {
   min-height: 100vh;
 }
 
-/* Main Image */
-
-#main-image {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: calc(100%);
-  height: calc((100vw - var(--navbar-width)) / 3.7);
-  background-image: linear-gradient(to right, var(--background-mod), var(--background-mod-grad));
-  clip-path: polygon(0 0, 100% 0, 100% calc((100vw - var(--navbar-width)) / 6), 0 calc((100vw - var(--navbar-width)) / 4));
-  object-fit: cover;
-}
-
 /* Links */
 
 main a {
@@ -170,6 +157,7 @@ main a:hover {
 /* Bigtext */
 
 .bigtext {
+  z-index: 5;
   display: block;
   margin: 0 auto;
   color: var(--main-invert-mod);
@@ -180,6 +168,7 @@ main a:hover {
 }
 
 .bigtext div {
+  z-index: 5;
   display: block;
   margin: 0 auto;
   text-align: center;
