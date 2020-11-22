@@ -4,7 +4,7 @@
   "description": "Main entry website for Prismatic Client",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && nodemon index.js"
+    "test": "nodemon index.js"
   },
   "repository": {
     "type": "git",
