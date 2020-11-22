@@ -2,7 +2,7 @@ var viscousPos = 0
 // set scroll viscosity, 0-infinity, higher=>more viscous
 const scrollViscosity = 10
 // set fps
-const fps = 60
+const fps = 24
 const video = document.getElementById("scrollvid")
 
 const body = document.body,
@@ -15,10 +15,10 @@ scrollToVideo = () => {
     let scrollPos = document.documentElement.scrollTop || document.body.scrollTop
     // Apply viscosity to create a slowed-down smoother scroll
     viscousPos = (scrollPos + viscousPos*scrollViscosity) / (scrollViscosity+1)
+    // Apply scroll to video
     video.currentTime = viscousPos * video.duration / height
-    // video.setAttribute("src", `/videos/frames/Untitled000${Math.round(viscousPos) + 86400}.tif`)
 }
 
-window.onload = () => {
+startScroll = () => {
     setInterval(scrollToVideo, 1000 / fps)
 }
