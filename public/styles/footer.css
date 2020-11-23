@@ -4,6 +4,6 @@ footer {
     padding: 2rem;
     width: calc(100% - 4rem);
     margin-top: 2rem;
-    bottom: var(--navbar-height);
+    bottom: -1px;
     background-color: var(--background-mod);
 }

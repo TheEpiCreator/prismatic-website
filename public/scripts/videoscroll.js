@@ -9,16 +9,17 @@ const video = document.getElementById("scrollvid")
 const body = document.body,
     html = document.documentElement
 
-const height = Math.max(body.scrollHeight, body.offsetHeight,
-    html.clientHeight, html.scrollHeight, html.offsetHeight)
+var height = (html.scrollHeight || body.scrollHeight) - window.innerHeight
 
 scrollToVideo = () => {
     if (canplay) {
-        let scrollPos = document.documentElement.scrollTop || document.body.scrollTop
+        let scrollPos = html.scrollTop || body.scrollTop
         // Apply viscosity to create a slowed-down smoother scroll
         viscousPos = (scrollPos + viscousPos * scrollViscosity) / (scrollViscosity + 1)
         // Apply scroll to video
         video.currentTime = viscousPos * video.duration / height
+        console.log(height)
+        console.log(scrollPos)
     }
 }
 
@@ -28,4 +29,8 @@ startScroll = () => {
 
 window.onload = () => {
     setTimeout(startScroll, 1000)
+}
+
+window.onresize = () => {
+    height = (html.scrollHeight || body.scrollHeight) - window.innerHeight
 }

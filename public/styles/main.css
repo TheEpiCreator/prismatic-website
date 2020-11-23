@@ -11,6 +11,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*::selection {
+  background-color: var(--highlight);
+  color: var(--highlight-mod);
+}
+
 :root {
   font-size: min(16px, max(2vw, 3px));
   font-family: 'Poppins', 'Segoe UI', sans-serif;
@@ -50,80 +55,17 @@ html {
   --main-grad: var(--main);
   --background-mod-grad: var(--background-mod);
   --contrast-grad: var(--contrast);
-}
-
-.theme-dark * {
-  /* Cursor */
-  cursor: url("custom-cursors/cursor-dark.png"), auto;
-}
-
-.theme-light {
-  --main: #fff;
-  --main-mod: #ebedef;
-  --background: #f2f3f5;
-  --background-mod: #e8eaed;
-  --contrast: #7a9fe4;
-  --contrast-mod: #75dddd;
-  --contrast-secondary: #bfa4ff;
-  --contrast-secondary-mod: #ffb7f9;
-  --main-invert: #2e3338;
-  --main-invert-mod: #323f4d;
-  --main-grad: var(--main);
-  --background-mod-grad: var(--background-mod);
-  --contrast-grad: var(--contrast);
-}
-
-.theme-light * {
-  /* Cursor */
-  cursor: url("custom-cursors/cursor-light.png"), auto;
-}
-
-.theme-dark-solar {
-  --main: #174368;
-  --main-mod: #174368;
-  --background: #1d2d50;
-  --background-mod: #1c2844;
-  --contrast: #fcdab7;
-  --contrast-mod: #fcdab7;
-  --main-invert: #b6b1c5;
-  --main-invert-mod: #b6b1c5;
-  --main-grad: #273455;
-  --background-mod-grad: #552743;
-  --contrast-grad: var(--contrast);
-}
-
-/* Discord themes */
-
-.theme-dark, .theme-dark-solar, .theme-light, .theme-light-solar {
+  --highlight: #bfa4ffb0;
+  --highlight-mod: #fff;
   --discord-red-1: #f04747;
   --discord-green-1: #43b581;
   --discord-green-2: #3ca374;
   --discord-blue-1: #7289da;
-}
-
-.theme-dark, .theme-dark-solar {
-  --discord-grayscale-1: #202225;
-  --discord-grayscale-2: #2f3136;
-  --discord-grayscale-3: #888;
-  --discord-contrast-1: #fff;
-  --discord-contrast-2: #b9bbbe;
-}
-
-.theme-light, .theme-light-solar {
   --discord-grayscale-1: #e3e5e8;
   --discord-grayscale-2: #f2f3f5;
   --discord-grayscale-3: #888;
   --discord-contrast-1: #060607;
   --discord-contrast-2: #4f5660;
-}
-
-.theme-dark-solar * {
-  /* Cursor */
-  cursor: url("custom-cursors/cursor-dark-solar.png"), auto;
-}
-
-.theme-transition * {
-  transition: all var(--transition-speed) var(--tranistion-timing);
 }
 
 /* Main */
@@ -173,6 +115,38 @@ main a:hover {
   margin: 0 auto;
   text-align: center;
   font-size: calc(min(calc(40vw - var(--navbar-width)), calc(40vh - var(--navbar-height))) / 3);
+}
+
+/* Spacers */
+
+.spacer-1 {
+  display: inline-block;
+  height: 10rem;
+  width: 1px;
+}
+
+.spacer-2 {
+  display: inline-block;
+  height: 25rem;
+  width: 1px;
+}
+
+.spacer-3 {
+  display: inline-block;
+  height: 30rem;
+  width: 1px;
+}
+
+.spacer-4 {
+  display: inline-block;
+  height: 60rem;
+  width: 1px;
+}
+
+.spacer-5 {
+  display: inline-block;
+  height: 80rem;
+  width: 1px;
 }
 
 /* Scrollbar */

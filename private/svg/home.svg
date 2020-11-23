@@ -1,6 +1,7 @@
-<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="home-icon" role="img"
+<svg focusable="false" data-prefix="fad" data-icon="home-icon" role="img"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+    <title>Go to home page</title>
     <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="255.9999393808" x2="255.9999393808" y1=".5003002281" y2="512.0640125335">
         <stop offset="0" stop-color="currentColor" class="fa-secondary"/>
         <stop offset="1" stop-color="currentColor" class="fa-primary"/>

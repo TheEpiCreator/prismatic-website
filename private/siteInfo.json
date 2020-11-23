@@ -68,7 +68,7 @@
                 },
                 {
                     "type": "component",
-                    "content": "spacer"
+                    "content": "description"
                 }
             ],
             "css": [

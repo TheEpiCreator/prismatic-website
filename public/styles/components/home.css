@@ -19,5 +19,25 @@
     position: fixed;
     top: 0;
     left: 0;
+    width: max(100vw, 100vh*1920/1080);
+}
+
+.desc {
+    z-index: 5;
+    position: relative;
+    display: inline-block;
+    margin: 4rem 7rem;
+    padding: 2rem;
+    background: var(--main);
+    border-radius: 1rem;
+    width: 33%;
+}
+
+.desc-container {
+    display: inline-block;
     width: 100%;
+}
+
+.d-right {
+    float: right;
 }
