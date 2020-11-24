@@ -25,11 +25,9 @@ if (button) {
 
     button.addEventListener("keyup", e => {
         if (e.key === "Enter") {
-            setTimeout(() => sound2?.play(), 180)
-            setTimeout(() => {
-                // Initiate download using file loading iframe
-                fileLoader ? fileLoader.src = "/download/get" : fileLoader = null
-            }, 230)
+            sound2?.play()
+            // Initiate download using file loading iframe
+            fileLoader ? fileLoader.src = "/download/get" : fileLoader = null
         }
     })
 

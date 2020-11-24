@@ -22,6 +22,11 @@
     width: max(100vw, 100vh*1920/1080);
 }
 
+.background-demo-img {
+    background: var(--main-mod) url(/images/weblogo.png) no-repeat 50% 50%;
+    background-size: cover;
+}
+
 .desc {
     z-index: 5;
     position: relative;
