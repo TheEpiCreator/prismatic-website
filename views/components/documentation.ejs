@@ -1,0 +1,8 @@
+<div id="card-list">
+    <% for(let item of cards) { %>
+    <div class="card">
+        <h1> <%= item.title %></h1>
+        <p><%- item.description %> </p>
+    </div>
+    <% } %>
+</div>

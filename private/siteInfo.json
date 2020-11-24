@@ -101,6 +101,58 @@
                 "button"
             ]
         },
+        "/documentation": {
+            "title": "Documentation",
+            "description": "TODO",
+            "keywords": [
+                "Documentation"
+            ],
+            "bots": [
+                "index",
+                "follow"
+            ],
+            "content": [
+                {
+                    "type": "component",
+                    "content": "documentation",
+                    "required": {
+                        "cards": [
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            },
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            },
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            },
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            },
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            },
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            },
+                            {
+                                "title": "Test",
+                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum consectetur felis, feugiat dictum risus pretium sit amet. Pellentesque lectus sapien, gravida a tristique vel, dapibus dapibus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent condimentum pulvinar quam, ut dapibus magna finibus sed. Nulla in erat in ligula tempor ullamcorper imperdiet vitae turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit aliquam bibendum."
+                            }
+                        ]
+                    }
+                }
+            ],
+            "css": [
+                "documentation"
+            ]
+        },
         "/404": {
             "title": "404",
             "description": "The page you are looking for was not found.",

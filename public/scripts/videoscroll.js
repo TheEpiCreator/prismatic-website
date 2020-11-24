@@ -13,7 +13,7 @@ window.mobileCheck = function () {
 if (!window.mobileCheck()) {
 
     // create video tag
-    let videoContainer = new HTMLTag("video", { autoplay: "", muted: "", preload: "", id: "scrollvid" }, content, [
+    let videoContainer = new HTMLTag("video", { muted: "", preload: "", id: "scrollvid" }, content, [
         new HTMLTag("source", { src: "/videos/t2.mp4", type: "video/mp4" }).tag,
         new HTMLTag("source", { src: "/videos/t2.mov", type: "video/mov" }).tag,
     ]) // move to desired location
@@ -43,6 +43,7 @@ if (!window.mobileCheck()) {
             newVideoPos = viscousPos * video.duration / height
             if (Math.abs(video.currentTime - newVideoPos) > 1/fps) video.currentTime = newVideoPos
             // TODO: play video if scrolling forward to improve fps
+            
         }
     }
 
