@@ -7,7 +7,6 @@
     left: 0;
     width: calc(100%);
     height: calc((100vw - var(--navbar-width)) / 3.7);
-    background-image: linear-gradient(to right, var(--background-mod), var(--background-mod-grad));
     clip-path: polygon(0 0, 100% 0, 100% calc((100vw - var(--navbar-width)) / 6), 0 calc((100vw - var(--navbar-width)) / 4));
     object-fit: cover;
 }

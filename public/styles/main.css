@@ -4,8 +4,10 @@
 /* Main */
 
 * {
+  /* Default margin/padding to 0 for everything */
   margin: 0;
   padding: 0;
+  /* Better Text */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,9 +19,8 @@
 }
 
 :root {
-  font-size: max(0.5vw, 16px);
+  font-size: 16px;
   font-family: 'Poppins', 'Segoe UI', sans-serif;
-  /* Better Text */
   --transition-speed: 300ms;
   --tranistion-timing: cubic-bezier(.31, .03, 0, 1);
   --navbar-width: 5rem;
