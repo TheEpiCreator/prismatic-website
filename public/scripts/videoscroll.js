@@ -13,7 +13,7 @@ window.mobileCheck = function () {
 if (!window.mobileCheck()) {
 
     // create video tag
-    let videoContainer = new HTMLTag("video", { muted: "", preload: "", id: "scrollvid" }, content, [
+    let videoContainer = new HTMLTag("video", { autoplay: "", muted: "", preload: "", id: "scrollvid" }, content, [
         new HTMLTag("source", { src: "/videos/t2.mp4", type: "video/mp4" }).tag,
         new HTMLTag("source", { src: "/videos/t2.mov", type: "video/mov" }).tag,
     ]) // move to desired location
@@ -21,9 +21,9 @@ if (!window.mobileCheck()) {
     var viscousPos = 0
     var canplay = true
     // set scroll viscosity, 0-infinity, higher=>more viscous
-    const scrollViscosity = 10
+    const scrollViscosity = 150
     // set fps
-    const fps = 60
+    const fps = 30
     const video = document.getElementById("scrollvid")
 
     const body = document.body,
@@ -31,13 +31,18 @@ if (!window.mobileCheck()) {
 
     var height = (html.scrollHeight || body.scrollHeight) - window.innerHeight
 
+    let scrollPos, newVideoPos
+    const adjustedViscosity = scrollViscosity / fps
+
     scrollToVideo = () => {
         if (canplay) {
-            let scrollPos = html.scrollTop || body.scrollTop
+            scrollPos = html.scrollTop || body.scrollTop
             // Apply viscosity to create a slowed-down smoother scroll
-            viscousPos = (scrollPos + viscousPos * scrollViscosity) / (scrollViscosity + 1)
+            viscousPos = (scrollPos + viscousPos * adjustedViscosity) / (adjustedViscosity + 1)
             // Apply scroll to video
-            video.currentTime = viscousPos * video.duration / height
+            newVideoPos = viscousPos * video.duration / height
+            if (Math.abs(video.currentTime - newVideoPos) > 1/fps) video.currentTime = newVideoPos
+            // TODO: play video if scrolling forward to improve fps
         }
     }
 
