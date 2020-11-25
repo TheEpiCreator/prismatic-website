@@ -2,6 +2,9 @@
 
 const content = document.getElementById("content")
 
+const fps = 30
+
+
 // Mobile device detection
 window.mobileCheck = function () {
     let check = false;
@@ -22,8 +25,6 @@ if (!window.mobileCheck()) {
     var canplay = true
     // set scroll viscosity, 0-infinity, higher=>more viscous
     const scrollViscosity = 150
-    // set fps
-    const fps = 30
     const video = document.getElementById("scrollvid")
 
     const body = document.body,
@@ -41,9 +42,9 @@ if (!window.mobileCheck()) {
             viscousPos = (scrollPos + viscousPos * adjustedViscosity) / (adjustedViscosity + 1)
             // Apply scroll to video
             newVideoPos = viscousPos * video.duration / height
-            if (Math.abs(video.currentTime - newVideoPos) > 1/fps) video.currentTime = newVideoPos
+            if (Math.abs(video.currentTime - newVideoPos) > 1 / fps) video.currentTime = newVideoPos
             // TODO: play video if scrolling forward to improve fps
-            
+
         }
     }
 
@@ -65,5 +66,21 @@ if (!window.mobileCheck()) {
         height = (html.scrollHeight || body.scrollHeight) - window.innerHeight
     }
 } else {
+    // Add background image if on mobile
     content.setAttribute("class", "background-demo-img")
 }
+
+// Description fade effects
+const descCards = document.getElementsByClassName("desc")
+
+window.setInterval(() => {
+    for (let item of descCards) {
+        let bounding = item.getBoundingClientRect()
+        bounding.mid = (bounding.top + bounding.bottom)/2
+        if (bounding.mid > 0 && bounding.mid < (window.innerHeight || document.documentElement.clientHeight)) {
+            item.classList.add("in-frame")
+        } else {
+            item.classList.remove("in-frame")
+        }
+    }
+}, 1000 / 15)

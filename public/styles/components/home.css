@@ -27,14 +27,19 @@
 }
 
 .desc {
+    opacity: 0;
     z-index: 5;
     position: relative;
-    display: inline-block;
     margin: 4rem 7rem;
     padding: 2rem;
     background: var(--main);
     border-radius: 1rem;
     width: 33%;
+    transition: opacity linear 200ms;
+}
+
+.desc.in-frame {
+    opacity: 1;
 }
 
 .desc-container {
