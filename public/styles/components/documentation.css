@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: flex-start;
     align-items: stretch;
     width: 100%;
@@ -15,18 +15,18 @@
     display: block;
     position: relative;
     background-color: var(--main);
-    border-radius: 2rem;
-    max-width: 28rem;
-    padding: 2rem 2rem;
-    margin: 3rem;
+    border-radius: 0 2rem;
+    max-width: max(20rem, 15%);
+    padding: 2rem;
+    margin: 3rem 5%;
     bottom: -2rem;
     border-style: solid;
     border-left-color: var(--contrast);
     border-top-color: var(--contrast-secondary);
     border-right-color: var(--main);
     border-bottom-color: var(--main);
-    /* TODO: Apply gradient to card borders */
-    /* border-image-source: linear-gradient(to right, var(--contrast), var(--contrast-secondary)); */
+    border-image-source: linear-gradient(45deg, #00000000, var(--contrast), var(--contrast-secondary-mod), #00000000);
+    border-image-slice: 1;
     border-width: 0.3rem;
     box-shadow: 0rem 0rem 0 #000000ff;
     transition: all 500ms ease-in-out;
