@@ -77,7 +77,7 @@ window.setInterval(() => {
     for (let item of descCards) {
         let bounding = item.getBoundingClientRect()
         bounding.mid = (bounding.top + bounding.bottom) / 2
-        if (bounding.mid > 0 && bounding.mid < (window.innerHeight || document.documentElement.clientHeight) || bounding.top < 40 && bounding.bottom > (window.innerHeight || document.documentElement.clientHeight) - 100) {
+        if (bounding.mid > 0 && bounding.mid < (window.innerHeight || document.documentElement.clientHeight) || bounding.top < 100 && bounding.bottom > (window.innerHeight || document.documentElement.clientHeight) - 100) {
             item.classList.add("in-frame")
         } else {
             item.classList.remove("in-frame")
