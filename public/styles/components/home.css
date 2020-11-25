@@ -35,11 +35,20 @@
     background: var(--main);
     border-radius: 1rem;
     width: 33%;
-    transition: opacity linear 200ms;
+    border-style: solid;
+    border-left-color: var(--contrast);
+    border-top-color: var(--contrast-mod);
+    border-right-color: var(--contrast-secondary);
+    border-bottom-color: var(--contrast-secondary-mod);
+    /* TODO: Apply gradient to card borders */
+    /* border-image-source: linear-gradient(to right, var(--contrast), var(--contrast-secondary)); */
+    border-width: 0.3rem;
+    transition: opacity linear 300ms;
 }
 
 .desc.in-frame {
     opacity: 1;
+    transition: opacity linear 100ms;
 }
 
 .desc-container {
