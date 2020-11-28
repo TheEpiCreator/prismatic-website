@@ -24,6 +24,7 @@ if (!window.isMobile()) {
     ]) // move to desired location
         .toPosition(1)
     var viscousPos = 0
+    var canUpdate = false
     var canPlay = false
     // set scroll viscosity, 0-infinity, higher=>more viscous
     const scrollViscosity = 150
@@ -38,13 +39,13 @@ if (!window.isMobile()) {
     const adjustedViscosity = scrollViscosity / vidFPS
 
     scrollToVideo = () => {
-        if (canPlay) {
+        if (canUpdate) {
             scrollPos = html.scrollTop || body.scrollTop
             // Apply viscosity to create a slowed-down smoother scroll
             viscousPos = (scrollPos + viscousPos * adjustedViscosity) / (adjustedViscosity + 1)
             // Apply scroll to video
             newVideoPos = viscousPos * video.duration / height
-            if (Math.abs(video.currentTime - newVideoPos) > 1 / vidFPS) video.currentTime = newVideoPos
+            if (Math.abs(video.currentTime - newVideoPos) > 1 / vidFPS && canPlay) video.currentTime = newVideoPos
             // TODO: play video if scrolling forward to improve fps
 
         }
@@ -90,8 +91,10 @@ if (!window.isMobile()) {
         logoBG.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%); background-position-y: ${amntAdjust[4]}%`)
         logo.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%);`)
         // Allow scrolling once user has scrolled
-        if(amntAdjust[2] < 50) canPlay = true
-        else canPlay = false
+        if (amntAdjust[2] < 50) {
+            canUpdate = true
+            canPlay = true
+        } else canPlay = false
     }, 1000 / otherFPSSlow)
 
     startScroll = () => {
