@@ -52,7 +52,6 @@ if (!window.isMobile()) {
 
     // Description fade effects
     const descCards = document.getElementsByClassName("desc")
-    const logo = document.getElementById("main-image")
 
     window.setInterval(() => {
         // Loop all description cards
@@ -68,11 +67,16 @@ if (!window.isMobile()) {
 
     }, 1000 / otherFPS)
 
+    const logoContainer = document.getElementById("main-image-container")
+    const logo = document.getElementById("main-image")
+    const borderWidth = 2;
+
     window.setInterval(() => {
         let scrollPos = html.scrollTop || body.scrollTop
-        let amnt = Math.min(scrollPos / logo.scrollHeight * -100 + 100, 100)
+        let amnt = Math.min(scrollPos / logoContainer.scrollHeight * -100 + 100, 100)
         console.log(amnt)
-        logo.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amnt}%, 0 ${amnt}%)`)
+        logoContainer.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amnt * 0.6 + borderWidth}%, 0 ${amnt * 0.9 + borderWidth}%)`)
+        logo.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amnt * 0.6}%, 0 ${amnt * 0.9}%)`)
     }, 1000 / otherFPSSlow)
 
     startScroll = () => {

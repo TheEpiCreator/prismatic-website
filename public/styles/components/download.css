@@ -21,6 +21,7 @@
     background-image: linear-gradient(to left, var(--contrast-secondary), var(--contrast-secondary-mod));
     box-shadow: 0vmin 10vmin 0 #bb7ee4;
     transition: all 400ms 40ms cubic-bezier(1, -0.05, 0, 1.41), color 300ms 40ms cubic-bezier(1, 0, .27, 1.44);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
 }
 
 #download:hover {

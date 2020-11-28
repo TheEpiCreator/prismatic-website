@@ -69,6 +69,33 @@ html {
   --discord-contrast-2: #4f5660;
 }
 
+#red-GB {
+  --main: #000;
+  --main-mod: #202020;
+  --background: #18191b;
+  --background-mod: #180000;
+  --contrast: #bd0000;
+  --contrast-mod: #a00000;
+  --contrast-secondary: #5a0000;
+  --contrast-secondary-mod: #530000;
+  --main-invert: #cecece;
+  --main-invert-mod: #c2c2c2;
+  --main-grad: var(--main);
+  --background-mod-grad: var(--background-mod);
+  --contrast-grad: var(--contrast);
+  --highlight: #a800a8b0;
+  --highlight-mod: #fff;
+  --discord-red-1: #f04747;
+  --discord-green-1: #43b581;
+  --discord-green-2: #3ca374;
+  --discord-blue-1: #7289da;
+  --discord-grayscale-1: #e3e5e8;
+  --discord-grayscale-2: #f2f3f5;
+  --discord-grayscale-3: #888;
+  --discord-contrast-1: #060607;
+  --discord-contrast-2: #4f5660;
+}
+
 /* Main */
 
 main {
