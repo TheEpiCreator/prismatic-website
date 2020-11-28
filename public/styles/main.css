@@ -42,7 +42,7 @@ p {
 
 /* Default Theme */
 
-.RG-blue {
+.cyan-magenta-YK {
   --main: #fff;
   --main-mod: #ebedef;
   --background: #f2f3f5;
@@ -155,31 +155,31 @@ main a:hover {
 .spacer-1 {
   display: inline-block;
   height: 10rem;
-  width: 1px;
+  width: 100%;
 }
 
 .spacer-2 {
   display: inline-block;
   height: 25rem;
-  width: 1px;
+  width: 100%;
 }
 
 .spacer-3 {
   display: inline-block;
   height: 30rem;
-  width: 1px;
+  width: 100%;
 }
 
 .spacer-4 {
   display: inline-block;
   height: 60rem;
-  width: 1px;
+  width: 100%;
 }
 
 .spacer-5 {
   display: inline-block;
   height: 80rem;
-  width: 1px;
+  width: 100%;
 }
 
 /* Scrollbar */

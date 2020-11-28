@@ -24,7 +24,7 @@ if (!window.isMobile()) {
     ]) // move to desired location
         .toPosition(1)
     var viscousPos = 0
-    var canplay = true
+    var canPlay = false
     // set scroll viscosity, 0-infinity, higher=>more viscous
     const scrollViscosity = 150
     const video = document.getElementById("scrollvid")
@@ -38,7 +38,7 @@ if (!window.isMobile()) {
     const adjustedViscosity = scrollViscosity / vidFPS
 
     scrollToVideo = () => {
-        if (canplay) {
+        if (canPlay) {
             scrollPos = html.scrollTop || body.scrollTop
             // Apply viscosity to create a slowed-down smoother scroll
             viscousPos = (scrollPos + viscousPos * adjustedViscosity) / (adjustedViscosity + 1)
@@ -69,16 +69,29 @@ if (!window.isMobile()) {
 
     // get elements
     const logoContainer = document.getElementById("main-image-container")
+    const logoBG = document.getElementById("main-image-bg")
     const logo = document.getElementById("main-image")
-    const borderWidth = 2;
+    const borderWidth = 1;
 
     window.setInterval(() => {
         // Get scroll pos and derive desired transparency
         let scrollPos = html.scrollTop || body.scrollTop
         let amnt = Math.min(scrollPos / logoContainer.scrollHeight * -100 + 100, 100)
-        console.log(amnt)
-        logoContainer.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amnt * 0.6 + borderWidth}%, 0 ${amnt * 0.9 + borderWidth}%)`)
-        logo.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amnt * 0.6}%, 0 ${amnt * 0.9}%)`)
+        let amntAdjust = [
+            amnt * 1.2 + borderWidth,
+            amnt * 1.8 + borderWidth,
+            amnt * 1.2,
+            amnt * 1.8,
+            (-amnt + 100) * 10,
+        ]
+        // Add clip path w/ border offset
+        logoContainer.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[0]}%, 0 ${amntAdjust[0]}%);`)
+        // Add clip path
+        logoBG.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%); background-position-y: ${amntAdjust[4]}%`)
+        logo.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%);`)
+        // Allow scrolling once user has scrolled
+        if(amntAdjust[2] < 50) canPlay = true
+        else canPlay = false
     }, 1000 / otherFPSSlow)
 
     startScroll = () => {
@@ -89,7 +102,7 @@ if (!window.isMobile()) {
         // start videoscroll script
         setTimeout(startScroll, 500)
         // set all card opacities to 0
-        for(let item of descCards) item.setAttribute("style", `opacity: 0`)
+        for (let item of descCards) item.setAttribute("style", `opacity: 0`)
     }
 
     window.onresize = () => {
