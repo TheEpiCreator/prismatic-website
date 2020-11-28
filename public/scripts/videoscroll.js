@@ -67,11 +67,13 @@ if (!window.isMobile()) {
 
     }, 1000 / otherFPS)
 
+    // get elements
     const logoContainer = document.getElementById("main-image-container")
     const logo = document.getElementById("main-image")
     const borderWidth = 2;
 
     window.setInterval(() => {
+        // Get scroll pos and derive desired transparency
         let scrollPos = html.scrollTop || body.scrollTop
         let amnt = Math.min(scrollPos / logoContainer.scrollHeight * -100 + 100, 100)
         console.log(amnt)
@@ -84,7 +86,10 @@ if (!window.isMobile()) {
     }
 
     window.onload = () => {
+        // start videoscroll script
         setTimeout(startScroll, 500)
+        // set all card opacities to 0
+        for(let item of descCards) item.setAttribute("style", `opacity: 0`)
     }
 
     window.onresize = () => {
