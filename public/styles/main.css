@@ -42,7 +42,7 @@ p {
 
 /* Default Theme */
 
-html {
+.RG-blue {
   --main: #fff;
   --main-mod: #ebedef;
   --background: #f2f3f5;
@@ -58,6 +58,9 @@ html {
   --contrast-grad: var(--contrast);
   --highlight: #bfa4ffb0;
   --highlight-mod: #fff;
+  --btn-txt-col: #9a81f5;
+  --btn-txt-col-mod: #8771d6;
+  --btn-stem-col: #bb7ee4;
   --discord-red-1: #f04747;
   --discord-green-1: #43b581;
   --discord-green-2: #3ca374;
@@ -69,22 +72,24 @@ html {
   --discord-contrast-2: #4f5660;
 }
 
-#red-GB {
+.red-GB {
   --main: #000;
   --main-mod: #202020;
   --background: #18191b;
   --background-mod: #180000;
-  --contrast: #bd0000;
-  --contrast-mod: #a00000;
-  --contrast-secondary: #5a0000;
-  --contrast-secondary-mod: #530000;
+  --contrast: #770000;
+  --contrast-mod: #8f0000;
+  --contrast-secondary: #be0000;
+  --contrast-secondary-mod: #ff0000;
   --main-invert: #cecece;
   --main-invert-mod: #c2c2c2;
   --main-grad: var(--main);
   --background-mod-grad: var(--background-mod);
   --contrast-grad: var(--contrast);
-  --highlight: #a800a8b0;
+  --highlight: #a83e00b0;
   --highlight-mod: #fff;
+  --btn-txt-col: #ff9100;
+  --btn-stem-col: #b44633;
   --discord-red-1: #f04747;
   --discord-green-1: #43b581;
   --discord-green-2: #3ca374;

@@ -15,13 +15,12 @@
     font-weight: bold;
     font-size: 10vw;
     border-radius: 3vmin;
-    color: #9a81f5;
-    text-shadow: 0 0.125vw 1vw #97c0ff00, 0 0.25vw 0 #a68dff;
-    background-color: #d6a5f7;
+    color: var(--btn-txt-col);
+    text-shadow: 0 0.125vw 1vw #97c0ff00, 0 0.25vw 0 var(--btn-txt-col-mod);
+    background-color: var(--contrast-secondary);
     background-image: linear-gradient(to left, var(--contrast-secondary), var(--contrast-secondary-mod));
-    box-shadow: 0vmin 10vmin 0 #bb7ee4;
+    box-shadow: 0vmin 10vmin 0 var(--btn-stem-col);
     transition: all 400ms 40ms cubic-bezier(1, -0.05, 0, 1.41), color 300ms 40ms cubic-bezier(1, 0, .27, 1.44);
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
 }
 
 #download:hover {
@@ -31,7 +30,7 @@
 #download:active {
     top: 5vmin;
     color: #fff;
-    text-shadow: 0 0.125vw 1vw #97c0ffff, 0 0.25vw 0 #d7cdfc;
+    text-shadow: 0 0.125vw 1vw #97c0ffff, 0 0.25vw 0 #ddd;
     box-shadow: 0 0 0 #bb7ee4;
     transition: all 85ms 0ms cubic-bezier(.19, .02, 0, 1), color 0ms 0ms cubic-bezier(1, 0, .27, 1.44);
 }
