@@ -2,13 +2,13 @@
 
 #main-image {
     z-index: 5;
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     width: calc(100%);
-    height: calc((100vw - var(--navbar-width)) / 3.7);
-    clip-path: polygon(0 0, 100% 0, 100% calc((100vw - var(--navbar-width)) / 6), 0 calc((100vw - var(--navbar-width)) / 4));
+    height: 100vh;
     object-fit: cover;
+    transition: clip-path 100ms ease-out;
 }
 
 /* Scrolling video */
@@ -27,7 +27,6 @@
 }
 
 .desc {
-    opacity: 0;
     z-index: 5;
     position: relative;
     margin: 4rem 7rem;
@@ -43,13 +42,8 @@
     /* TODO: Apply gradient to card borders */
     /* border-image-source: linear-gradient(to right, var(--contrast), var(--contrast-secondary)); */
     border-width: 0.3rem;
-    transition: opacity linear 300ms;
 }
-
-.desc.in-frame {
-    opacity: 1;
-    transition: opacity linear 100ms;
-}
+/* TODO: Add vertical-screen styling to description cards */
 
 .desc-container {
     display: inline-block;
