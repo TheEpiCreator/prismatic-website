@@ -182,6 +182,24 @@ main a:hover {
   width: 100%;
 }
 
+.spacer-1p {
+  display: inline-block;
+  height: 100vw;
+  width: 100%;
+}
+
+.spacer-2p {
+  display: inline-block;
+  height: 200vw;
+  width: 100%;
+}
+
+.spacer-3p {
+  display: inline-block;
+  height: 300vw;
+  width: 100%;
+}
+
 /* Scrollbar */
 
 body::-webkit-scrollbar {

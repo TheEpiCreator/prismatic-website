@@ -22,10 +22,9 @@ if (!window.isMobile()) {
         new HTMLTag("source", { src: "/videos/t2.mp4", type: "video/mp4" }).tag,
         new HTMLTag("source", { src: "/videos/t2.mov", type: "video/mov" }).tag,
     ]) // move to desired location
-        .toPosition(1)
+        .toPosition(2)
     var viscousPos = 0
     var canUpdate = false
-    var canPlay = false
     // set scroll viscosity, 0-infinity, higher=>more viscous
     const scrollViscosity = 150
     const video = document.getElementById("scrollvid")
@@ -45,9 +44,8 @@ if (!window.isMobile()) {
             viscousPos = (scrollPos + viscousPos * adjustedViscosity) / (adjustedViscosity + 1)
             // Apply scroll to video
             newVideoPos = viscousPos * video.duration / height
-            if (Math.abs(video.currentTime - newVideoPos) > 1 / vidFPS && canPlay) video.currentTime = newVideoPos
+            if (Math.abs(video.currentTime - newVideoPos) > 1 / vidFPS) video.currentTime = newVideoPos
             // TODO: play video if scrolling forward to improve fps
-
         }
     }
 
@@ -83,18 +81,15 @@ if (!window.isMobile()) {
             amnt * 1.8 + borderWidth,
             amnt * 1.2,
             amnt * 1.8,
-            (-amnt + 100) * 10,
+            amnt - 100,
         ]
         // Add clip path w/ border offset
         logoContainer.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[0]}%, 0 ${amntAdjust[0]}%);`)
         // Add clip path
-        logoBG.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%); background-position-y: ${amntAdjust[4]}%`)
-        logo.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%);`)
+        logoBG.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%); background-position-y: ${amntAdjust[4]}px`)
         // Allow scrolling once user has scrolled
-        if (amntAdjust[2] < 50) {
-            canUpdate = true
-            canPlay = true
-        } else canPlay = false
+        if (amntAdjust[2] < 50) canUpdate = true
+        else if(amntAdjust[2] > 75) canUpdate = false
     }, 1000 / otherFPSSlow)
 
     startScroll = () => {

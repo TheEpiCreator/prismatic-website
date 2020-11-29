@@ -3,8 +3,8 @@
 #main-image-container {
     z-index: 5;
     position: fixed;
-    width: calc(100%);
-    height: calc(100%);
+    width: 100%;
+    height: 100%;
     /* Mimics clip border */
     background-image: linear-gradient(to right, var(--contrast) 20%, var(--contrast-secondary) 90%);
     transition: clip-path 100ms ease-out, background-position-y 100ms ease-out;
@@ -21,9 +21,26 @@
 #main-image {
     width: inherit;
     height: inherit;
-    object-fit: cover;
+    position: fixed;
+    top: -20%;
+    object-fit: contain;
     object-position: center;
     transition: inherit;
+}
+
+#download {
+    z-index: 6;
+    position: fixed;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: max(20%, 20rem);
+    background-color: #000;
+    border-radius: 0.5rem;
+    margin: auto;
+    /* Center */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
 }
 
 /* Scrolling video */
@@ -68,4 +85,8 @@
 
 .d-right {
     float: right;
+}
+
+#win-icon {
+    color: var(--main);
 }
