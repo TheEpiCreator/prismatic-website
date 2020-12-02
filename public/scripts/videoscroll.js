@@ -69,6 +69,7 @@ if (!window.isMobile()) {
     // get elements
     const logoContainer = document.getElementById("main-image-container")
     const logoBG = document.getElementById("main-image-bg")
+    const refractBG = document.getElementById("refract-bg")
     const logo = document.getElementById("main-image")
     const borderWidth = 1;
 
@@ -80,13 +81,14 @@ if (!window.isMobile()) {
             amnt * 1.2 + borderWidth,
             amnt * 1.8 + borderWidth,
             amnt * 1.2,
-            amnt * 1.8,
+            (amnt - 50) * 1.8,
             amnt - 100,
         ]
         // Add clip path w/ border offset
         logoContainer.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[0]}%, 0 ${amntAdjust[0]}%);`)
         // Add clip path
         logoBG.setAttribute("style", `clip-path: polygon(0 0, 100% 0, 100% ${amntAdjust[2]}%, 0 ${amntAdjust[2]}%); background-position-y: ${amntAdjust[4]}px`)
+        refractBG.setAttribute("style", `background-position-y: ${amntAdjust[3]}px`)
         // Allow scrolling once user has scrolled
         if (amntAdjust[2] < 50) canUpdate = true
         else if(amntAdjust[2] > 75) canUpdate = false

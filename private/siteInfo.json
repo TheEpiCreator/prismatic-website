@@ -55,8 +55,15 @@
                     "type": "test"
                 }
             ],
-            "js": [],
-            "css": []
+            "js": [
+                "js-cookie",
+                "main"
+            ],
+            "css": [
+                "main",
+                "navbar",
+                "footer"
+            ]
         },
         "/": {
             "title": "",
@@ -154,6 +161,29 @@
             ],
             "js": [
                 "cardOpacity"
+            ]
+        },
+        "/settings": {
+            "title": "Settings",
+            "description": "The settings menu for Prismatic",
+            "keywords": [
+                "settings",
+                "change theme"
+            ],
+            "bots": [
+                "noindex"
+            ],
+            "content": [
+                {
+                    "type": "component",
+                    "content": "settings"
+                }
+            ],
+            "js": [
+                "settings"
+            ],
+            "css": [
+                "settings"
             ]
         },
         "/404": {

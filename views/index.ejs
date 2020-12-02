@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="cyan-magenta-YK" lang="<%= page.lang || def.lang %> ">
+<html class="light" lang="<%= page.lang || def.lang %> ">
 
 <head>
   <!-- Meta -->
@@ -13,17 +13,11 @@
   <title><%= page.title === "" || !page.title ? title.default : `${title.pre}${page.title}${title.post}` %> </title>
   <!-- Favicon -->
   <link defer id="icon" rel="shortcut icon" type="image" href="/icon.ico">
-  <!-- Main Style -->
-  <link rel="stylesheet" type="text/css" href="/styles/main.css">
-  <!-- Navbar Style -->
-  <link rel="stylesheet" type="text/css" href="/styles/navbar.css">
-  <!-- Footer -->
-  <link defer rel="stylesheet" type="text/css" href="/styles/footer.css">
   <!-- Generated -->
-  <% for(let item of page.css || def.css) { %>
-  <link defer rel="stylesheet" type="text/css" href="/styles/components/<%= item %>.css">
+  <% for(let item of page.css? def.css.concat(page.css) : def.css) { %>
+  <link defer rel="stylesheet" type="text/css" href="/styles/<%= item %>.css">
   <% } %>
-  <% for(let item of page.js || def.js) { %>
+  <% for(let item of page.js? def.js.concat(page.js) : def.js) { %>
   <script defer src="/scripts/<%= item %>.js"></script>
   <% } %>
   <!-- Sound Manager Script -->
@@ -68,7 +62,7 @@
       <!-- If you're seeing this, the webpage population is working properly. -->
       <% break %>
       <% case "component": %>
-      <%- include(`components/${item.content}`, item.required || {}) %>
+      <%- include(`components/${item.content}`, item.required || {siteInfo}) %>
       <% break %>
       <% default: %>
       <%- `<${item.type}>` %>

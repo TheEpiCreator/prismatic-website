@@ -29,7 +29,8 @@ const settings = JSON.parse(fs.readFileSync(path.join(private, 'settings.json'))
 console.log('Loaded settings')
 
 // Preload site serving settings
-const siteInfo = JSON.parse(fs.readFileSync(path.join(private, 'siteInfo.json')))
+var siteInfo = JSON.parse(fs.readFileSync(path.join(private, 'siteInfo.json')))
+siteInfo.icons = {}
 console.log('Loaded template data')
 const redirects = JSON.parse(fs.readFileSync(path.join(private, 'redirects.json')))
 console.log('Loaded redirect index')
@@ -39,6 +40,7 @@ console.group(`Loading SVG data from ${svg}`)
 fs.readdirSync(svg).forEach(file => {
     // Load and parse file, add it to object
     icons[file] = fs.readFileSync(path.join(svg, file)).toString()
+    siteInfo.icons[file] = icons[file]
     console.log(`Loaded ${file}`)
 })
 console.groupEnd()

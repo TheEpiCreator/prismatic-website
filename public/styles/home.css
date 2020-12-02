@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 /* Main Image */
 
 #main-image-container {
@@ -10,37 +11,78 @@
     transition: clip-path 100ms ease-out, background-position-y 100ms ease-out;
 }
 
-#main-image-bg {
+.main-image-bg {
     width: inherit;
     height: inherit;
     transition: inherit;
+    display: block;
     background-image: url(/images/weblogo_bg.png);
     background-size: cover;
 }
 
-#main-image {
-    width: inherit;
-    height: inherit;
+.refract-1 {
     position: fixed;
-    top: -20%;
+    clip-path: polygon(44.82% 13.75%, 49.29% 6.61%, 52.18% 18.55%, 51.71% 31.52%, 56.91% 27.76%, 59.54% 31.91%, 56.75% 37.61%, 52.65% 36.96%, 53.91% 42.8%, 53.23% 48.51%, 50.92% 48.25%, 49.71% 45.14%, 45.98% 55.77%, 42.14% 55.38%, 41.62% 46.69%, 47.03% 38.52%, 45.87% 35.67%);
+}
+
+#main-image {
+    position: relative;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#main-image img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vh;
     object-fit: contain;
     object-position: center;
     transition: inherit;
 }
 
-#download {
-    z-index: 6;
-    position: fixed;
-    text-transform: uppercase;
-    font-weight: bold;
-    width: max(20%, 20rem);
-    background-color: #000;
-    border-radius: 0.5rem;
-    margin: auto;
-    /* Center */
+#main-image div {
+    color: #fff;
+    letter-spacing: 0.3em;
+    font-size: calc(10vw - (var(--navbar-width) / 10));
+    text-align: center;
+    position: relative;
+    font-family: 'Julius Sans One', sans-serif;
     left: 50%;
     transform: translateX(-50%);
-    top: 50%;
+}
+
+#download {
+    position: relative;
+    z-index: 6;
+    background: var(--main);
+    font-size: 3rem;
+    max-width: 6.7em;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    user-select: none;
+}
+
+#download span.svg {
+    display: inline;
+    height: 3rem;
+}
+
+#download svg {
+    height: inherit;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 0.7rem 0 0;
+    bottom: 0.2rem;
+}
+
+#download span.text {
+    color: var(--main-invert);
+    font-size: 3rem;
 }
 
 /* Scrolling video */

@@ -42,7 +42,7 @@ p {
 
 /* Default Theme */
 
-.cyan-magenta-YK {
+.light {
   --main: #fff;
   --main-mod: #ebedef;
   --background: #f2f3f5;
@@ -72,24 +72,25 @@ p {
   --discord-contrast-2: #4f5660;
 }
 
-.red-GB {
-  --main: #000;
-  --main-mod: #202020;
-  --background: #18191b;
-  --background-mod: #180000;
-  --contrast: #770000;
-  --contrast-mod: #8f0000;
-  --contrast-secondary: #be0000;
-  --contrast-secondary-mod: #ff0000;
-  --main-invert: #cecece;
-  --main-invert-mod: #c2c2c2;
+.dark {
+  --main: #25292D;
+  --main-mod: #28333E;
+  --background: #080A0B;
+  --background-mod: #1B1F22;
+  --contrast: #1C4187;
+  --contrast-mod: #31C4C4;
+  --contrast-secondary: #B800A8;
+  --contrast-secondary-mod: #9B70FF;
+  --main-invert: #E8EAED;
+  --main-invert-mod: #F2F3F5;
   --main-grad: var(--main);
   --background-mod-grad: var(--background-mod);
   --contrast-grad: var(--contrast);
-  --highlight: #a83e00b0;
+  --highlight: #bfa4ffb0;
   --highlight-mod: #fff;
-  --btn-txt-col: #ff9100;
-  --btn-stem-col: #b44633;
+  --btn-txt-col: #9a81f5;
+  --btn-txt-col-mod: #8771d6;
+  --btn-stem-col: #bb7ee4;
   --discord-red-1: #f04747;
   --discord-green-1: #43b581;
   --discord-green-2: #3ca374;
@@ -99,6 +100,22 @@ p {
   --discord-grayscale-3: #888;
   --discord-contrast-1: #060607;
   --discord-contrast-2: #4f5660;
+}
+
+.svg-primary {
+  color: var(--contrast);
+}
+
+.svg-primary.mod {
+  color: var(--contrast-mod);
+}
+
+.svg-secondary {
+  color: var(--contrast-secondary);
+}
+
+.svg-secondary.mod {
+  color: var(--contrast-secondary-mod);
 }
 
 /* Main */
@@ -183,19 +200,19 @@ main a:hover {
 }
 
 .spacer-1p {
-  display: inline-block;
+  display: block;
   height: 100vw;
   width: 100%;
 }
 
 .spacer-2p {
-  display: inline-block;
+  display: block;
   height: 200vw;
   width: 100%;
 }
 
 .spacer-3p {
-  display: inline-block;
+  display: block;
   height: 300vw;
   width: 100%;
 }

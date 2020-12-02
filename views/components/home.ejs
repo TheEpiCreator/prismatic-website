@@ -1,7 +1,16 @@
 <div id="main-image-container">
-    <div id="main-image-bg">
-        <img defer id="main-image" src="images/weblogo.png" alt="main logo">
-        <a tabindex="0" role="button" aria-roledescription="A button that can be pressed to download the client"
-            id="download"> <%= icon %> Download</a>
+    <div id="main-image-bg" class="main-image-bg">
+        <div id="refract-bg" class="main-image-bg refract-1"></div>
+        <div id="main-image">
+            <img defer src="images/weblogo.png" alt="main logo">
+            <div>Prismatic</div>
+        </div>
+        <div tabindex="0" role="button" aria-roledescription="A button that can be pressed to download the client"
+            id="download">
+            <span class="svg">
+                <%- siteInfo.icons["download-embed.svg"] %>
+            </span>
+            <span class="text">Download</span>
+        </div>
     </div>
 </div>

@@ -1,0 +1,10 @@
+<svg focusable="false" data-prefix="fad" data-icon="download-embed-icon" role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+    <title>Go to download page</title>
+    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="256" x2="256" y1="0" y2="512">
+        <stop offset="0" stop-color="currentColor" class="svg-primary"/>
+        <stop offset="1" stop-color="currentColor" class="svg-secondary"/>
+    </linearGradient>
+    <path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0" fill="url(#e)"/>
+</svg>
