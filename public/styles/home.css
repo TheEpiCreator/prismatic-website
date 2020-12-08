@@ -51,6 +51,7 @@
     font-family: 'Julius Sans One', sans-serif;
     left: 50%;
     transform: translateX(-50%);
+    user-select: none;
 }
 
 #download {
@@ -131,4 +132,8 @@
 
 #win-icon {
     color: var(--main);
+}
+
+#file-loader {
+    display: none;
 }
