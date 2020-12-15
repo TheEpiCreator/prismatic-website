@@ -129,6 +129,9 @@
   .nav-link {
     justify-content: center;
   }
+  .nav-link svg {
+    margin: 0;
+  }
   .link-text {
     display: none;
   }

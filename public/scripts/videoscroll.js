@@ -59,7 +59,7 @@ if (!window.isMobile()) {
             let bounding = item.getBoundingClientRect()
             bounding.mid = (bounding.top + bounding.bottom) / 2
             // Calculate opacity
-            let newOpacity = (-Math.abs(Math.max(bounding.mid, 0) / (window.innerHeight || document.documentElement.clientHeight) - 0.5) + 0.5) * 2
+            let newOpacity = Math.min(((-Math.abs(Math.max(bounding.mid, 0) / (window.innerHeight || document.documentElement.clientHeight) - 0.5) + 0.5) * 2 + 0.5 ) * 2 - 1.4, 1)
             // Apply opacity
             if (newOpacity > 0) item.setAttribute("style", `opacity: ${newOpacity}`)
         }
