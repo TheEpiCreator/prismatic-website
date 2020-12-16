@@ -143,7 +143,9 @@ p {
   --discord-contrast-2: var(--light-discord-contrast-2);
 }
 
-.dark {
+/* Theme before loading preference (don't hurt dark mode users' eyes */
+
+.dark, body {
   --main: var(--dark-main);
   --main-mod: var(--dark-main-mod);
   --background: var(--dark-background);
